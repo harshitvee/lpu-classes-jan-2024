@@ -98,3 +98,9 @@ const person = {
 
 // check if property exists 
 // console.log("address" in person) 
+
+// person.firstName = "jane";
+// // person.gender = "female"
+// person["gender"] = "female"
+
+// console.log(person);
