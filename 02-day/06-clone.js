@@ -32,11 +32,6 @@
 // how to deep copy 
 
 
-
-
-
-
-
 const person1 = {
     firstName: "John",
     gender: "male",
