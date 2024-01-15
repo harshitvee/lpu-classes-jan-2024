@@ -1,0 +1,14 @@
+{
+  "store": {
+    "todos": [
+      {
+        "completed": false,
+        "title": "Task A"
+      },
+      {
+        "completed": false,
+        "title": "Task B"
+      }
+    ]
+  }
+}
