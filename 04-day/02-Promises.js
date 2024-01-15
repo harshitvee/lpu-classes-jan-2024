@@ -2,7 +2,11 @@ import friedRicePromise from "./myPromises.js";
 
 console.log("Script Start");
 
-friedRicePromise
+setTimeout(() => {
+  console.log("Hello from settimeout");
+}, 0);
+
+friedRicePromise()
   .then((value) => {
     console.log(value);
   })
