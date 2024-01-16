@@ -10,26 +10,40 @@
 
 // callback hell, pyramid of doom
 
-setTimeout(() => {
-  console.log(1);
-  setTimeout(() => {
-    console.log(2);
-    setTimeout(() => {
-      console.log(3);
-    }, 2500);
-  }, 2000);
-}, 1000);
+// setTimeout(() => {
+//   console.log(1);
+//   setTimeout(() => {
+//     console.log(2);
+//     setTimeout(() => {
+//       console.log(3);
+//     }, 2500);
+//   }, 2000);
+// }, 1000);
+
+// setTimeout(() => {
+//   console.log(1);
+//   setTimeout(() => {
+//     console.log(2);
+//   }, 2000);
+// }, 1000);
 
 function func(callback) {
   callback();
 }
 
 func(() => {
-  console.log("hello");
+  // base url / users
+  // read
+  // 78784
   func(() => {
-    console.log("world");
-    func(() => {
-      console.log("good");
-    });
+    // base url / users/ 78784
   });
 });
+
+// es2015
+
+// XHR
+// endpoint ---> baseurl/users
+// endpoint ----> baseurl/users/1
+
+function getDataFromServer(endpoint) {}
