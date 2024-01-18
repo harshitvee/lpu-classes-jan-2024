@@ -1,0 +1,24 @@
+react app 
+
+3 ways to create react app 
+
+1. as library (import from cdn )
+
+2. use cra 
+a. node js install 
+b. npx create-react-app app-name
+if permission issues 
+mac/linux 
+use sudo 
+sudo npx create-react-app app-name 
+
+windows 
+right click on cmd/powershell/bash click on run as administrator
+npx create-react-app app-name 
+
+
+
+
+
+
+3. use vite
