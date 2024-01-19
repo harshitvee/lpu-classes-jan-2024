@@ -1,0 +1,9 @@
+.navItems {
+  list-style: none;
+  border: 2px solid red;
+}
+
+.bgBlue {
+  background-color: blue;
+  color: white;
+}

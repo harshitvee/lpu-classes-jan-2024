@@ -1,0 +1,16 @@
+what is react, reactDOM 
+app w/o using any tool 
+react.createElement 
+why jsx 
+babbel
+what are functional components
+create app using cra 
+create app using vite
+
+today 
+
+create multiple components 
+how to import images and use them 
+write js expressions inside jsx 
+inline styles
+small netflix clone
