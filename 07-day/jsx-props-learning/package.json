@@ -1,5 +1,5 @@
 {
-  "name": "my-app-using-vite",
+  "name": "jsx-props-learning",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "axios": "^1.6.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
