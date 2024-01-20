@@ -1,7 +1,5 @@
 import Greeting from "./Greeting";
-
 // prop
-
 function App() {
   return (
     <div>
@@ -10,5 +8,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
