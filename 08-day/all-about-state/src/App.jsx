@@ -1,9 +1,9 @@
-import StateWithArrays from "./StateWithArrays";
+import StateWithObjects from "./StateWithObjects";
 
 function App() {
   return (
     <>
-      <StateWithArrays />
+      <StateWithObjects />
     </>
   );
 }
