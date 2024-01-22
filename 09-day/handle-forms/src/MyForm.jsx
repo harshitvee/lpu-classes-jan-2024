@@ -9,15 +9,20 @@ function MyForm() {
   function handleChange(e) {
     setUsername(e.target.value);
   }
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log(username);
+  }
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="username"
         value={username}
         onChange={handleChange}
       />
-    </div>
+      <input type="submit" value="submit" />
+    </form>
   );
 }
 export default MyForm;
