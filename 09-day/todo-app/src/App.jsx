@@ -19,9 +19,15 @@ function App() {
       comleted: false,
     },
   ]);
+  function addTodo(newTodo) {
+    console.log("add todo function called");
+    console.log(newTodo);
+    setTodos((todos) => [...todos, newTodo]);
+    // update state
+  }
   return (
     <div className="App">
-      <AddTodoForm />
+      <AddTodoForm addTodo={addTodo} />
       <TodoList todos={todos} />
     </div>
   );
