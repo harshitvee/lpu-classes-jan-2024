@@ -1,6 +1,9 @@
 import { useState } from "react";
 import AddTodoForm from "./Components/AddTodoForm";
 import TodoList from "./Components/TodoList";
+import styles from "./App.module.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   const [todos, setTodos] = useState([
     {
@@ -34,32 +37,54 @@ function App() {
     );
   }
   function deleteTodo(id) {
-    // const newTodos = [];
-    // for (let todo of todos) {
-    //   if (todo.id !== id) {
-    //     newTodos.push(todo);
-    //   }
-    // }
-    // setTodos(newTodos);
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   }
+  function updateTitle(id, title) {
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) => {
+        if (todo.id === id) {
+          return { ...todo, title: title };
+        } else {
+          return { ...todo };
+        }
+      })
+    );
+  }
   return (
-    <div>
-      <AddTodoForm addTodo={addTodo} />
-      <TodoList
-        todos={todos}
-        deleteTodo={deleteTodo}
-        toggleCompleted={toggleCompleted}
+    <>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={2000}
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
       />
-    </div>
+      <div className={styles.App}>
+        <h1 className={styles.heading}>Todo App</h1>
+        <AddTodoForm addTodo={addTodo} />
+        <TodoList
+          todos={todos}
+          deleteTodo={deleteTodo}
+          toggleCompleted={toggleCompleted}
+          updateTitle={updateTitle}
+        />
+        {todos.length > 0 ? (
+          <button
+            className={styles.clearAllTodosBtn}
+            onClick={() => {
+              setTodos([]);
+            }}
+          >
+            Clear All Todos
+          </button>
+        ) : null}
+      </div>
+    </>
   );
 }
 export default App;
-// create a function in app (addTodo)
-// that function(addTodo) will take newTodo as input
-// then this function (addTodo) will add newTodo to app state
-// pass this function to addTodoForm via prop
-// accept this function inside AddTodoForm
-// onSubmit event
-// create newTodo (already done)
-// call that function (addTodo)
