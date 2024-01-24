@@ -1,0 +1,15 @@
+.slider {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 900px;
+  margin: auto;
+  justify-content: center;
+  width: 90%;
+}
+.sliderImage {
+  display: block;
+  width: 70%;
+  height: 300px;
+  object-fit: cover;
+}
