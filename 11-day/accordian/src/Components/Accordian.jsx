@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { AiOutlinePlus, AiOutlineClose } from "react-icons/ai";
 import styles from "./Accordian.module.css";
 function Accordian({ accordians: myAccordians }) {
   const initialAccordians = myAccordians.map((accordian, index) => {
@@ -40,13 +40,21 @@ function Accordian({ accordians: myAccordians }) {
           return (
             <div key={accordian.id} className={styles.accordian}>
               <div className={styles.accordianHeading}>
-                <h3>{accordian.heading}</h3>
+                <h3 className={styles.heading}>{accordian.heading}</h3>
                 {accordian.isOpen ? (
-                  <button onClick={() => closeAccordian(accordian.id)}>
-                    x
+                  <button
+                    onClick={() => closeAccordian(accordian.id)}
+                    className={styles.button}
+                  >
+                    <AiOutlineClose />
                   </button>
                 ) : (
-                  <button onClick={() => openAccordian(accordian.id)}>+</button>
+                  <button
+                    onClick={() => openAccordian(accordian.id)}
+                    className={styles.button}
+                  >
+                    <AiOutlinePlus />
+                  </button>
                 )}
               </div>
               <div
