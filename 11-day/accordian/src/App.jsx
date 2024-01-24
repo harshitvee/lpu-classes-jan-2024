@@ -1,9 +1,9 @@
 import Accordian from "./Components/Accordian";
-
+import { accordians } from "./data/accordians";
 function App() {
   return (
     <div>
-      <Accordian />
+      <Accordian accordians={accordians} />
     </div>
   );
 }
