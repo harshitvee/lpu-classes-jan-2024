@@ -1,0 +1,28 @@
+.accordianWrapper {
+  /* border: 2px solid red; */
+  max-width: 900px;
+  width: 90%;
+  margin: auto;
+}
+
+.mainHeading {
+  text-align: center;
+}
+.accordian {
+  border: 1px solid #787878;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+.accordianHeading {
+  /* border: 2px solid lightcoral; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #565656;
+}
+.accordianContent {
+  display: none;
+}
+.open {
+  display: block;
+}
