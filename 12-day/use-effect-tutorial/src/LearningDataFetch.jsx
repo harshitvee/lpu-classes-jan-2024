@@ -3,7 +3,16 @@
 import { useEffect, useState } from "react";
 // useEffect(() => {}, []) // callback runs after initial mount
 // data fetching thing --> asked in all the interviews
-const endpoint = "https://jsonplaceholder.typicode.com/userss";
+
+// frontend
+
+// backend (api )
+
+// node js + react
+
+// node js api <--> react consume
+
+const endpoint = "https://jsonplaceholder.typicode.com/users";
 
 function LearningDataFetch() {
   const [users, setUsers] = useState([]);
@@ -19,10 +28,10 @@ function LearningDataFetch() {
       const data = await response.json();
       // store this inside state
       setUsers(data); //  component re-render again
-      setIsLoading(false);
     } catch (error) {
-      setIsLoading(false);
       setError(error.message);
+    } finally {
+      setIsLoading(false);
     }
   }
   useEffect(() => {

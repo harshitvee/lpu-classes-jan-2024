@@ -1,9 +1,9 @@
-import LearningDataFetch from "./LearningDataFetch";
+import LearnDataFetchingWithAxios from "./LearnDataFetchingWithAxios";
 
 function App() {
   return (
     <div>
-      <LearningDataFetch />
+      <LearnDataFetchingWithAxios />
     </div>
   );
 }
