@@ -1,0 +1,16 @@
+.App {
+  max-width: 800px;
+  width: 90%;
+  margin: auto;
+  position: relative;
+}
+.heading {
+  text-align: center;
+}
+.clearAllTodosBtn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #efefef;
+  color: #232323;
+}

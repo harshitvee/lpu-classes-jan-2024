@@ -1,0 +1,10 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navItems {
+  display: flex;
+  list-style-type: none;
+  gap: 1rem;
+}
