@@ -4,6 +4,7 @@ import TodoList from "../Components/TodoList";
 import styles from "./Home.module.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 function Home({ todos, setTodos }) {
   function addTodo(newTodo) {
     setTodos((prevTodos) => [...prevTodos, newTodo]);
