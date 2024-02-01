@@ -4,9 +4,11 @@ import Movies from "../Components/Movies";
 function Home() {
   const [movieSearchInput, setMovieSearchInput] = useState("");
   const [movies, setMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   async function handleSubmit(e) {
     e.preventDefault();
+    setIsLoading(true);
     setError(null);
     // start searching
 
@@ -22,6 +24,18 @@ function Home() {
       }
     } catch (error) {
       setError(error.message);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+  let component = null;
+  if (isLoading) {
+    component = <h1>Loading ....</h1>;
+  } else {
+    if (error) {
+      component = <h1>{error}</h1>;
+    } else {
+      component = <Movies movies={movies} />;
     }
   }
   return (
@@ -38,8 +52,11 @@ function Home() {
         />
         <button type="submit">Search</button>
       </form>
-      {error ? <h1>{error}</h1> : <Movies movies={movies} />}
+      {component}
     </div>
   );
 }
+
+// loading <h1> loading </h1>
+
 export default Home;
