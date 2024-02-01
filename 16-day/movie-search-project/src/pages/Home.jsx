@@ -13,7 +13,8 @@ function Home() {
     // start searching
 
     // Todo : keep sensitive info in .env file
-    const endpoint = `https://www.omdbapi.com/?apikey=27b2f0a3&s=${movieSearchInput}`;
+    const apiKey = import.meta.env.VITE_OMDB_KEY;
+    const endpoint = `https://www.omdbapi.com/?apikey=${apiKey}&s=${movieSearchInput}`;
     try {
       const response = await axios.get(endpoint);
       const { Search, Response, Error } = response.data;
