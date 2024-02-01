@@ -62,3 +62,10 @@ const server = http.createServer((req, res) => {
 server.listen(PORT, () => {
   console.log(`Server is running on PORT: ${PORT}`);
 });
+
+// node js --> crud
+// express --> crud
+
+// auth
+
+// project
