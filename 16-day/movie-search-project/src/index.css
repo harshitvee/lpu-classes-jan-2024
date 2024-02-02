@@ -5,8 +5,15 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  background-color: #121212;
+  --primary: #a4aace;
+  --primary-hover: #adadc1;
+  --dark-100: #121212;
+  --dark-200: #282828;
+  --dark-300: #3f3f3f;
+  --dark-400: #3f3f3f;
+  --dark-500: #717171;
+  --dark-600: #8b8b8b;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -15,11 +22,11 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--primary);
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--primary-hover);
 }
 * {
   box-sizing: border-box;
@@ -48,13 +55,17 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: var(--primary-hover);
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
+.container {
+  max-width: 1400px;
+  width: 90%;
+  margin: auto;
+}
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

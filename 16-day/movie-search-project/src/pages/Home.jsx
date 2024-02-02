@@ -1,8 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
 import Movies from "../Components/Movies";
+import styles from "./Home.module.css";
 function Home() {
-  const [movieSearchInput, setMovieSearchInput] = useState("");
+  const [movieSearchInput, setMovieSearchInput] = useState("marvel");
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -11,8 +12,6 @@ function Home() {
     setIsLoading(true);
     setError(null);
     // start searching
-
-    // Todo : keep sensitive info in .env file
     const apiKey = import.meta.env.VITE_OMDB_KEY;
     const endpoint = `https://www.omdbapi.com/?apikey=${apiKey}&s=${movieSearchInput}`;
     try {
@@ -40,9 +39,10 @@ function Home() {
     }
   }
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="container">
+      <form onSubmit={handleSubmit} className={` ${styles.form}`}>
         <input
+          placeholder="marvel"
           type="text"
           name="movie-search"
           id="movie-search"

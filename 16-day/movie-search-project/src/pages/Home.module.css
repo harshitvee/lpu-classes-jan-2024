@@ -1,0 +1,23 @@
+.form {
+  border: 2px solid var(--dark-600);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  border-radius: 10px;
+}
+.form input {
+  height: 100%;
+  background: transparent;
+  outline: none;
+  border: none;
+  font-size: 1.2rem;
+  font-family: inherit;
+
+  width: 80%;
+}
+.form button {
+  background-color: var(--dark-400);
+}

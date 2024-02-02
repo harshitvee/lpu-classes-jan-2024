@@ -44,7 +44,7 @@ app.post("/api/v1/todos", (req, res) => {
       if (err) {
         res.status(500).json({ message: "internal server error" });
       } else {
-        res.status(200).json(newTodo);
+        res.status(201).json(newTodo);
       }
     });
   }
