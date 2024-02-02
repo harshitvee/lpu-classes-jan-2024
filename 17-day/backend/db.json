@@ -1,7 +1,6 @@
 [
-  { "id": "1", "title": "learn nodejs", "completed": false },
+  { "id": "1", "title": "learn express.js", "completed": true },
   { "id": "2", "title": "learn express", "completed": false },
   { "id": "3", "title": "Book tickets", "completed": true },
-  { "id": "4", "title": "play cricket", "completed": false },
-  { "id": "5", "title": "new title", "completed": false }
+  { "id": "4", "title": "play cricket", "completed": false }
 ]
