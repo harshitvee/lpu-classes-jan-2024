@@ -62,23 +62,26 @@ app.patch("/api/v1/todos/:id", (req, res) => {
   const id = req.params.id;
   const todo = todos.find((todo) => todo.id === id);
   if (todo) {
-    const newTodo = {
-      ...todo,
-      title: "title" in req.body ? req.body.title : todo.title,
-      completed: "completed" in req.body ? req.body.completed : todo.completed,
-    };
-    const updatedTodos = todos.map((todo) => {
-      if (todo.id === id) {
-        return newTodo;
-      } else {
-        return todo;
-      }
-    });
-    fs.writeFile("db.json", JSON.stringify(updatedTodos), "utf-8", (err) => {
+    // const newTodo = {
+    //   ...todo,
+    //   title: "title" in req.body ? req.body.title : todo.title,
+    //   completed: "completed" in req.body ? req.body.completed : todo.completed,
+    // };
+    todo.title = "title" in req.body ? req.body.title : todo.title;
+    todo.completed =
+      "completed" in req.body ? req.body.completed : todo.completed;
+    // const updatedTodos = todos.map((todo) => {
+    //   if (todo.id === id) {
+    //     return newTodo;
+    //   } else {
+    //     return todo;
+    //   }
+    // });
+    fs.writeFile("db.json", JSON.stringify(todos), "utf-8", (err) => {
       if (err) {
         res.status(500).json({ message: "internal server error" });
       } else {
-        res.status(200).json(newTodo);
+        res.status(200).json(todo);
       }
     });
   } else {
@@ -90,10 +93,20 @@ app.patch("/api/v1/todos/:id", (req, res) => {
 
 app.delete("/api/v1/todos/:id", (req, res) => {
   const id = req.params.id;
-  const todo = todos.find((todo) => todo.id === id);
-  if (todo) {
-    const updatedTodos = todos.filter((todo) => todo.id !== id);
-    fs.writeFile("db.json", JSON.stringify(updatedTodos), "utf-8", (err) => {
+  // const todo = todos.find((todo) => todo.id === id);
+  let index = -1;
+  for (let i = 0; i < todos.length; i++) {
+    if (todos[i].id === id) {
+      index = i;
+    }
+  }
+  // -1
+  // index
+
+  if (index !== -1) {
+    todos.splice(index, 1);
+    // const updatedTodos = todos.filter((todo) => todo.id !== id);
+    fs.writeFile("db.json", JSON.stringify(todos), "utf-8", (err) => {
       if (err) {
         res.status(500).json({ message: "internal server error" });
       } else {
