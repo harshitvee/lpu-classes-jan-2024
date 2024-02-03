@@ -1,10 +1,16 @@
 const express = require("express");
 const todos = require("./db.json");
 const fs = require("fs");
+const cors = require("cors");
+const { v4: uuidv4 } = require("uuid");
+
 const app = express();
 const port = 8000;
 
+app.use(cors());
+
 app.use(express.json());
+// bodyParser
 
 app.get("/", (req, res) => {
   res.json({ message: "Hello from server" });
@@ -33,7 +39,7 @@ app.post("/api/v1/todos", (req, res) => {
   } else if (!("completed" in req.body)) {
     res.status(400).json({ message: "comleted is missing" });
   } else {
-    const id = todos.length + 1;
+    const id = uuidv4();
     const newTodo = {
       id: id.toString(),
       title: req.body.title,
@@ -52,7 +58,6 @@ app.post("/api/v1/todos", (req, res) => {
 
 // update
 
-// title , completed, both
 app.patch("/api/v1/todos/:id", (req, res) => {
   const id = req.params.id;
   const todo = todos.find((todo) => todo.id === id);
