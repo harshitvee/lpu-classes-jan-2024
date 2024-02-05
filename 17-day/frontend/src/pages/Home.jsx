@@ -45,7 +45,7 @@ function Home() {
       <AddTodoForm fetchTodos={fetchTodos} />
       {todos.map((todo) => (
         <div
-          key={todo.id}
+          key={todo._id}
           style={{ border: "2px solid white", margin: "1rem", padding: "1rem" }}
         >
           <p
@@ -56,9 +56,9 @@ function Home() {
           >
             {todo.title}
           </p>
-          <button onClick={() => handleDelete(todo.id)}>Delete</button>
+          <button onClick={() => handleDelete(todo._id)}>Delete</button>
           <button>update title</button>
-          <button onClick={() => toggleCompleted(todo.id, todo.completed)}>
+          <button onClick={() => toggleCompleted(todo._id, todo.completed)}>
             Toggle Completed
           </button>
         </div>
