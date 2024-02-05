@@ -14,20 +14,51 @@ async function createTodo(req, res) {
     const todo = await TodoModel.create(req.body);
     res.status(201).json(todo);
   } catch (error) {
-    res.status(400).json("something went wrong");
+    res.status(400).json(error.message);
   }
 }
 async function getSingleTodo(req, res) {
   const id = req.params.id;
-  res.json(`Get : ${id}`);
+  try {
+    const todo = await TodoModel.findOne({ _id: id });
+    // blank
+    if (!todo) {
+      res.status(404).json(`No todo with id ${id}`);
+    } else {
+      res.status(200).json(todo);
+    }
+  } catch (error) {
+    res.status(400).json(error.message);
+  }
 }
 async function updateTodo(req, res) {
   const id = req.params.id;
-  res.json(`Patch : ${id}`);
+  try {
+    const todo = await TodoModel.findByIdAndUpdate({ _id: id }, req.body, {
+      new: true,
+      runValidators: true,
+    });
+    if (!todo) {
+      res.status(404).json(`No todo with id ${id}`);
+    } else {
+      res.status(200).json(todo);
+    }
+  } catch (error) {
+    res.status(400).json(error.message);
+  }
 }
 async function deleteTodo(req, res) {
   const id = req.params.id;
-  res.json(`Delete : ${id}`);
+  try {
+    const todo = await TodoModel.findOneAndDelete({ _id: id });
+    if (!todo) {
+      res.status(400).json(`No todo with id ${id}`);
+    } else {
+      res.status(200).json(todo);
+    }
+  } catch (error) {
+    res.status(400).json(error.message);
+  }
 }
 module.exports = {
   getAllTodos,
