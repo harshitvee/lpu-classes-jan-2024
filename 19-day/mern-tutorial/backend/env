@@ -1,2 +1,0 @@
-MONGO_URI=mongodb+srv://harshitsharma0227:codprog123@cluster0.am2hx3v.mongodb.net/todos-app?retryWrites=true&w=majority
-PORT=8000
