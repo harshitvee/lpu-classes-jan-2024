@@ -1,0 +1,13 @@
+mini cart application 
+
+when user open website 
+
+20 products 
+
+add to functinality 
+improve qty, decrease 
+total amount
+
+
+crud 
+ME  R   N
