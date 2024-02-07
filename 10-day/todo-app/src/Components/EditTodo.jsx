@@ -1,7 +1,9 @@
 import { useState } from "react";
 
 import styles from "./EditTodo.module.css";
-function EditTodo({ id, updateTitle, setIsUpdateMode, title: prevTitle }) {
+import { useTodos } from "../context/TodosProvider";
+function EditTodo({ id, setIsUpdateMode, title: prevTitle }) {
+  const { updateTitle } = useTodos();
   const [title, setTitle] = useState(prevTitle || "");
   function handleSubmit(e) {
     e.preventDefault();

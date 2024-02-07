@@ -1,7 +1,10 @@
 import { useState } from "react";
 import styles from "./AddTodoFrom.module.css";
 import { toast } from "react-toastify";
-function AddTodoForm({ addTodo }) {
+import { useTodos } from "../context/TodosProvider";
+
+function AddTodoForm() {
+  const { addTodo } = useTodos();
   const [todoTitle, setTodoTitle] = useState("");
   function handleSubmit(e) {
     e.preventDefault();

@@ -3,7 +3,10 @@ import styles from "./Todo.module.css";
 import { ImCross } from "react-icons/im";
 import { MdEdit } from "react-icons/md";
 import EditTodo from "./EditTodo";
-function Todo({ todo, deleteTodo, toggleCompleted, updateTitle }) {
+import { useTodos } from "../context/TodosProvider";
+
+function Todo({ todo }) {
+  const { deleteTodo, toggleCompleted } = useTodos();
   const [isUpdateMode, setIsUpdateMode] = useState(false);
   function handleDelete() {
     deleteTodo(todo.id);
@@ -16,7 +19,6 @@ function Todo({ todo, deleteTodo, toggleCompleted, updateTitle }) {
     return (
       <EditTodo
         id={todo.id}
-        updateTitle={updateTitle}
         setIsUpdateMode={setIsUpdateMode}
         title={todo.title}
       />
