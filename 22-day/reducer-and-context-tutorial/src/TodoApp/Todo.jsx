@@ -8,7 +8,9 @@ function Todo({ id, title, completed, dispatch }) {
       <button onClick={() => dispatch({ type: "DELETE", payload: { id: id } })}>
         Delete
       </button>
-      <button>Toggle</button>
+      <button onClick={() => dispatch({ type: "TOGGLE", payload: { id: id } })}>
+        Toggle
+      </button>
     </div>
   );
 }
