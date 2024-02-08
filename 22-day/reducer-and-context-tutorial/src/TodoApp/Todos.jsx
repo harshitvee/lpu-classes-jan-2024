@@ -1,6 +1,8 @@
 import Todo from "./Todo";
+import { useTodos } from "./contexts/TodoProvider";
 
-function Todos({ todos, dispatch }) {
+function Todos() {
+  const { todos, dispatch } = useTodos();
   return (
     <div>
       {todos.map((todo) => (

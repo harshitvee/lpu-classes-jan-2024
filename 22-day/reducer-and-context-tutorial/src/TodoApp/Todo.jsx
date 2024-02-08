@@ -1,5 +1,7 @@
 import styles from "./Todo.module.css";
-function Todo({ id, title, completed, dispatch }) {
+import { useTodos } from "./contexts/TodoProvider";
+function Todo({ id, title, completed }) {
+  const { dispatch } = useTodos();
   return (
     <div className={styles.todo}>
       <p>id: {id}</p>
