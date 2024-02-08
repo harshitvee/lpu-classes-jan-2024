@@ -30,6 +30,10 @@
 
 // output : array with 2 vals [state, function to  update state]
 
+// when we want to change the count
+// we call dispatch function
+// dispatch function calls reducer and reducer updates the count
+
 import { useReducer } from "react";
 function reducer(count, action) {
   if (action.type === "INCREASE") {
@@ -43,11 +47,6 @@ function reducer(count, action) {
   }
   return count;
 }
-
-// when we want to change the count
-// we call dispatch function
-// dispatch function calls reducer and reducer updates the count
-
 function LearningUseReducer() {
   const [count, dispatch] = useReducer(reducer, 0);
 

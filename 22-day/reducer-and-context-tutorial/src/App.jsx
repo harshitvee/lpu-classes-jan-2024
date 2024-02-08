@@ -1,8 +1,8 @@
-import LearningUseReducer from "./LearningUseReducer";
+import TodoApp from "./TodoApp/TodoApp";
 function App() {
   return (
     <div>
-      <LearningUseReducer />
+      <TodoApp />
     </div>
   );
 }
