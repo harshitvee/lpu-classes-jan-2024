@@ -1,0 +1,15 @@
+.productImg {
+  width: 200px;
+  display: block;
+
+  object-fit: cover;
+}
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+}
