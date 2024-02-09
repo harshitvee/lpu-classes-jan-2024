@@ -1,0 +1,12 @@
+.nav {
+  max-width: 1400px;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cartLink {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
