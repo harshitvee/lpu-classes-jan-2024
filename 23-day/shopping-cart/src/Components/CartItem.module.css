@@ -1,0 +1,25 @@
+.cartItem {
+  border: 2px solid black;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.imgAndTitle {
+  display: flex;
+  gap: 1rem;
+  width: 50%;
+}
+.qtyControl {
+  display: flex;
+  gap: 1rem;
+}
