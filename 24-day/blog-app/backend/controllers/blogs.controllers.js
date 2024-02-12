@@ -1,5 +1,4 @@
 const BlogModel = require("../models/Blog.model");
-
 async function getAllBlogs(req, res) {
   try {
     const blogs = await BlogModel.find({});
@@ -11,6 +10,7 @@ async function getAllBlogs(req, res) {
 async function createBlog(req, res) {
   try {
     // document : row
+    req.body.user_id = req.user._id;
     const blog = await BlogModel.create(req.body);
     res.status(201).json(blog);
   } catch (error) {
