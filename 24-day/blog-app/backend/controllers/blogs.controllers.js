@@ -45,7 +45,6 @@ async function getSingleBlog(req, res) {
 }
 async function updateBlog(req, res) {
   // req -->
-  console.log(req.user._id);
   const id = req.params.id;
   try {
     const blog = await BlogModel.findOne({ _id: id });
@@ -77,11 +76,17 @@ async function updateBlog(req, res) {
 async function deleteBlog(req, res) {
   const id = req.params.id;
   try {
-    const blog = await BlogModel.findOneAndDelete({ _id: id });
+    const blog = await BlogModel.findOne({ _id: id });
     if (!blog) {
-      res.status(400).json(`No blog with id ${id}`);
+      return res.status(404).json(`No blog with id ${id}`);
+    }
+    if (blog.user_id == req.user._id) {
+      const deletedBlog = await BlogModel.findOneAndDelete({ _id: id });
+      res.status(200).json(deletedBlog);
     } else {
-      res.status(200).json(blog);
+      return res
+        .status(401)
+        .json({ error: "You are not authorized  to do this" });
     }
   } catch (error) {
     res.status(400).json(error.message);
