@@ -1,0 +1,21 @@
+.nav {
+  display: flex;
+  max-width: 1400px;
+  width: 90%;
+  margin: auto;
+  height: 56px;
+  align-items: center;
+
+  justify-content: space-between;
+}
+.navItems {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  list-style-type: none;
+}
+.greet {
+  text-transform: capitalize;
+}
